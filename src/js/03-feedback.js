@@ -36,14 +36,15 @@ const onInputForm = evt => {
 
 // Listeners
 
-inputEl.addEventListener('input', throttle(onInputForm, 1000));
+inputEl.addEventListener('input', throttle(onInputForm, 500));
 
-textareaEl.addEventListener('input', throttle(onInputForm, 1000));
+textareaEl.addEventListener('input', throttle(onInputForm, 500));
 
 formEl.addEventListener('submit', evt => {
   evt.preventDefault();
   if (inputEl.value && textareaEl.value) {
     formEl.reset();
     localStorage.removeItem(INPUT_DATA_NAME);
+    console.log(formDataInput);
   }
 });
