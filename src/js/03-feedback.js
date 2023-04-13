@@ -46,5 +46,6 @@ formEl.addEventListener('submit', evt => {
     formEl.reset();
     localStorage.removeItem(INPUT_DATA_NAME);
     console.log(formDataInput);
+    Object.keys(formDataInput).forEach(key => delete formDataInput[key]);
   }
 });

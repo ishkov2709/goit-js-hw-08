@@ -8,12 +8,11 @@ const player = new Player('vimeo-player', {
 const TIME_DATA_NAME = 'videoplayer-current-time';
 
 if (localStorage.getItem(TIME_DATA_NAME)) {
-  const currentTime = JSON.parse(localStorage.getItem(TIME_DATA_NAME));
-  player.setCurrentTime(currentTime.seconds);
+  player.setCurrentTime(localStorage.getItem(TIME_DATA_NAME));
 }
 
-const onPlay = data => {
-  localStorage.setItem(TIME_DATA_NAME, JSON.stringify(data));
+const onPlay = ({ seconds }) => {
+  localStorage.setItem(TIME_DATA_NAME, seconds);
 };
 
 player.on('timeupdate', throttle(onPlay, 1000));

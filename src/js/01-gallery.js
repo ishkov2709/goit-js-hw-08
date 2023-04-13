@@ -20,9 +20,7 @@ const baseItemsGalleryMarkup = galleryItems
 
 listGalleryEl.innerHTML = baseItemsGalleryMarkup;
 
-var lightbox = new SimpleLightbox('.gallery a', {});
-
-lightbox.on('show.simplelightbox', () => {
-  lightbox.defaultOptions.captionsData = 'alt';
-  lightbox.defaultOptions.captionDelay = 250;
+var lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
 });
